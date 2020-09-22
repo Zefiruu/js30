@@ -1,0 +1,5 @@
+:root {
+    --var1: red;
+    background-color: var(--var1);
+}
+
