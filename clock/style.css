@@ -1,36 +1,36 @@
 * {
-    background-color: #1B1E23;
+	background-color: #1b1e23;
 }
 
 #the-clock {
-    margin: 35vh auto;
-    width: 250px;
-    height: 250px;
-    border: solid white 1px;
-    border-radius: 100%;
+	margin: 35vh auto;
+	width: 250px;
+	height: 250px;
+	border: solid white 1px;
+	border-radius: 100%;
 }
 
 #second-hand {
-    margin-top: 125px;
-    margin-left: 125px;
-    width:115px;
-    border: solid rgb(118, 118, 243) 1px;
-    transform-origin: 0%;
-    transform: rotate(0deg)
+	margin-top: 125px;
+	margin-left: 125px;
+	width: 115px;
+	border: solid rgb(118, 118, 243) 1px;
+	transform-origin: 0%;
+	transform: rotate(0deg);
 }
 
 #minute-hand {
-    margin-left: 125px;
-    width:115px;
-    border: solid white 1px;
-    transform-origin: 0%;
-    transform: rotate(0deg);    
+	margin-left: 125px;
+	width: 115px;
+	border: solid white 1px;
+	transform-origin: 0%;
+	transform: rotate(0deg);
 }
 
 #hour-hand {
-    margin-left: 125px;
-    width: 90px;
-    border: solid rgb(241, 132, 132) 1px;
-    transform-origin: 0%;
-    transform: rotate(0deg);    
+	margin-left: 125px;
+	width: 90px;
+	border: solid rgb(241, 132, 132) 1px;
+	transform-origin: 0%;
+	transform: rotate(0deg);
 }
