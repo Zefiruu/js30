@@ -102,7 +102,12 @@
 
 			// 7. sort Exercise
 			// Sort the people alphabetically by last name
-			let seven = people.map((item) => item.split(", ")[0]).sort();
+			let seven = people.sort((firstPerson, secondPerson) => {
+                let [firstLastName] = firstPerson.split(', ');
+                let [secondLastName] = secondPerson.split(', ');
+                return firstLastName > secondLastName ? 1 : -1;
+            });
+            console.table(seven)
 
 			// 8. Reduce Exercise
 			// Sum up the instances of each of these
