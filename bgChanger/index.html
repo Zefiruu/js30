@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Change BG</title>
-</head>
-<body>
-    <div class='title'>
-        <h1>Update CSS variables with <strong>JS</strong></h1>
-    </div>
-    <div class='main-wrapper'>
-        <div class='input-wrapper'>
-            <p>Spacing</p>
-            <input type="range" value="16" name="spacing" id="spacing">
-        </div>
-        <div class='input-wrapper'>
-            <p>Blur</p>
-            <input type="range" value="0" name="blur" id="blur">
-        </div>
-        <div class='input-wrapper'>
-            <p>Base Color</p>
-            <input type="color" name="color-picker" id="color-picker" onchange="changeBackground()">
-        </div>
-    </div>
-        <img src="bg.jpg" alt="Default image to play with">
-        <script src="script.js"></script>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Change BG</title>
+	</head>
+	<body>
+		<div class="title">
+			<h1>Update CSS variables with <strong>JS</strong></h1>
+		</div>
+		<div class="main-wrapper">
+			<div class="input-wrapper">
+				<p>Spacing</p>
+				<input type="range" value="16" name="spacing" id="spacing" />
+			</div>
+			<div class="input-wrapper">
+				<p>Blur</p>
+				<input type="range" value="0" name="blur" id="blur" />
+			</div>
+			<div class="input-wrapper">
+				<p>Base Color</p>
+				<input
+					type="color"
+					name="color-picker"
+					id="color-picker"
+					onchange="changeBackground()"
+				/>
+			</div>
+		</div>
+		<img src="bg.jpg" alt="Default image to play with" />
+		<script src="script.js"></script>
+	</body>
 </html>
