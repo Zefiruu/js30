@@ -1,5 +1,42 @@
 :root {
-    --var1: red;
-    background-color: var(--var1);
+    --background-color: rgb(186, 154, 228);
+    --spacing: 1rem;
+    --blur: 0;
 }
 
+body {
+    margin: 1rem;
+    font-size: 1.5rem;
+    background-color: rgb(27, 39, 53);
+    text-align: center;
+    color: rgb(190, 232, 238);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.main-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    margin-top: 10vh;
+}
+
+strong {
+    color: var(--background-color);
+}
+
+
+input[type='range'] {
+    background-color:rgba(186, 154, 228, 0.1);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+img {
+    background-color:rgb(190, 232, 238);
+    padding: var(--spacing);
+    margin-top: 2rem;
+    height: 50vh;
+    filter: blur(var(--blur));
+}

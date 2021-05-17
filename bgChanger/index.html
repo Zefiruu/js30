@@ -7,8 +7,24 @@
     <title>Change BG</title>
 </head>
 <body>
-    <input type="color" name="color-picker" id="color-picker" onchange="change()">
-    <input type="range" name="test" id="test">
-    <script src="script.js"></script>
+    <div class='title'>
+        <h1>Update CSS variables with <strong>JS</strong></h1>
+    </div>
+    <div class='main-wrapper'>
+        <div class='input-wrapper'>
+            <p>Spacing</p>
+            <input type="range" name="spacing" id="spacing">
+        </div>
+        <div class='input-wrapper'>
+            <p>Blur</p>
+            <input type="range" name="blur" id="blur">
+        </div>
+        <div class='input-wrapper'>
+            <p>Base Color</p>
+            <input type="color" name="color-picker" id="color-picker" onchange="changeBackground()">
+        </div>
+    </div>
+        <img src="bg.jpg" alt="Default image to play with">
+        <script src="script.js"></script>
 </body>
 </html>
