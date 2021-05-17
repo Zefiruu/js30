@@ -103,11 +103,10 @@
 			// 7. sort Exercise
 			// Sort the people alphabetically by last name
 			let seven = people.sort((firstPerson, secondPerson) => {
-                let [firstLastName] = firstPerson.split(', ');
-                let [secondLastName] = secondPerson.split(', ');
-                return firstLastName > secondLastName ? 1 : -1;
-            });
-            console.table(seven)
+				let [firstLastName] = firstPerson.split(", ");
+				let [secondLastName] = secondPerson.split(", ");
+				return firstLastName > secondLastName ? 1 : -1;
+			});
 
 			// 8. Reduce Exercise
 			// Sum up the instances of each of these
@@ -127,6 +126,14 @@
 				"car",
 				"truck",
 			];
+
+			let eight = data.reduce((object, automobile) => {
+				if (!object[automobile]) object[automobile] = 0;
+				object[automobile]++;
+				return object;
+			}, {});
+
+			console.log(eight);
 		</script>
 	</body>
 </html>
