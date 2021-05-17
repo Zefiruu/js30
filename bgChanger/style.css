@@ -1,6 +1,6 @@
 :root {
     --background-color: rgb(186, 154, 228);
-    --spacing: 1rem;
+    --spacing: 16px;
     --blur: 0;
 }
 
@@ -34,7 +34,7 @@ input[type='range'] {
 }
 
 img {
-    background-color:rgb(190, 232, 238);
+    background-color:var(--background-color);
     padding: var(--spacing);
     margin-top: 2rem;
     height: 50vh;

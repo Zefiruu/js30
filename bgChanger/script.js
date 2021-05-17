@@ -1,10 +1,16 @@
+const rootStyle = document.documentElement.style;
+
+
 function changeBackground() {
     let newColor = document.getElementById('color-picker').value;
-    document.documentElement.style.cssText = `--background-color: ${newColor};`;
+    rootStyle.setProperty('--background-color', newColor);
+    console.log(newColor)
 }
 
-function
+function changeVariable(value, id) {
+    rootStyle.setProperty(`--${id}` ,`${value}px`);
+}
 
 
 let arr = document.querySelectorAll('input');
-arr.forEach(input => input.addEventListener('pointermove', (event) => console.log(event.target.value)))
+arr.forEach(input => input.addEventListener('pointermove', ({target}) => changeVariable(target.value, target.id)))
