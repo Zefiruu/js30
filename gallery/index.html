@@ -103,11 +103,11 @@
 				font-size: 40px;
 			}
 
-			.active {
+			.panel.active {
 				flex: 4;
 			}
 
-			.activeChildren {
+			.panel.active > * {
 				margin: 3rem;
 			}
 		</style>
@@ -144,20 +144,11 @@
 			let panels = document.querySelectorAll(".panel");
 
 			panels.forEach((panel) => {
-				let panelChildrenArr = Array.from(panel.children);
-
 				panel.addEventListener("click", () => {
+					panels.forEach((panelToRemove) =>
+						panelToRemove.classList.remove("active")
+					);
 					panel.classList.toggle("active");
-					panelChildrenArr.forEach((child) =>
-						child.classList.toggle("activeChildren")
-					);
-				});
-
-				panel.addEventListener("mouseout", () => {
-					panel.classList.remove("active");
-					panelChildrenArr.forEach((child) =>
-						child.classList.remove("activeChildren")
-					);
 				});
 			});
 		</script>
