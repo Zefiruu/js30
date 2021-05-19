@@ -27,55 +27,29 @@
 				ul = document.querySelector("ul");
 
 			// Event listener
+			
 			const filterSearch = () => {
 				// Remove template Li
 				(li = document.querySelectorAll("li")),
-					li.forEach((item) => item.remove());
+				li.forEach((item) => item.remove());
 
 				// Filter cities
 				let filteredCities = cities.filter(
 					({ city, state }) =>
-						city.toLowerCase().includes(searchBox.value.toLowerCase()) ||
+					city.toLowerCase().includes(searchBox.value.toLowerCase()) ||
 						state.toLowerCase().includes(searchBox.value.toLowerCase())
 				);
-
+				
 				// Create suggestions
 				for (let i = 0; i <= 10; i++) {
 					let { city, state, population } = filteredCities[i];
 					let newLi = document.createElement("li"),
-						text = document.createTextNode(`${city}, ${state} - ${population}`);
+					text = document.createTextNode(`${city}, ${state} - ${population}`);
 					newLi.appendChild(text);
 					ul.append(newLi);
 				}
 			};
-
 			searchBox.addEventListener("keydown", filterSearch);
-			// let searchBox = document.querySelector("input"),
-			// 	li = document.querySelectorAll("li"),
-			// 	ul = document.getElementsByTagName("ul"),
-			// 	fetchPromise = fetch(endpoint).then((object) => {
-			// 		console.log("executed");
-			// 		return object.json();
-			// 	});
-
-			// searchBox.addEventListener("keydown", () => {
-			// 	li.forEach((item) => item.remove());
-			// 	fetchPromise
-			// 		.then((cities) =>
-			// 			cities.filter(
-			// 				({ city, state }) =>
-			// 					city.toLowerCase().includes(searchBox.value.toLowerCase()) ||
-			// 					state.toLowerCase().includes(searchBox.value.toLowerCase())
-			// 			)
-			// 		)
-			// 		.then((result) => {
-			// 			let { city, state, population } = result[0];
-			// 			let newLi = document.createElement('li');
-			// 			let text = document.createTextNode(`${city}, ${state} 		${population}`);
-			// 			ul.appendChild(newLi);
-			// 			console.log(`${city}, ${state} 		${population}`);
-			// 		});
-			// });
-		</script>
+			</script>
 	</body>
 </html>
