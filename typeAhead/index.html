@@ -29,19 +29,24 @@
 
 			// Event listener
 			const filterSearch = () => {
+				// Remove template Li
 				li.forEach((item) => item.remove());
 
+				// Filter cities
 				let filteredCities = cities.filter(
-						({ city, state }) =>
-							city.toLowerCase().includes(searchBox.value.toLowerCase()) ||
-							state.toLowerCase().includes(searchBox.value.toLowerCase())
-					),
-					{ city, state, population } = filteredCities,
+					({ city, state }) =>
+						city.toLowerCase().includes(searchBox.value.toLowerCase()) ||
+						state.toLowerCase().includes(searchBox.value.toLowerCase())
+				);
 
-					newLi = document.createElement("li"),
-					newLiText = document.createTextNode(
-						`${city}, ${state} 		${population}`
-					);
+				// Create suggestions
+				for (let i = 0; i <= 5; i++) {
+					let {city, state, population} = filteredCities[i];
+					let newLi = document.createElement("li"),
+						text = document.createTextNode(`${city}, ${state} 		${population}`);
+					newLi.appendChild(text);
+					ul.append(newLi);
+				}
 			};
 
 			searchBox.addEventListener("keydown", filterSearch);
