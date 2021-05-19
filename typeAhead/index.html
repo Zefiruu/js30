@@ -14,34 +14,63 @@
 			</ul>
 		</form>
 		<script>
+			// Fetch
 			const endpoint =
 				"https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json";
+			let cities = [];
+			fetch(endpoint)
+				.then((result) => result.json())
+				.then((object) => (cities = object));
+
+			// Query selector variables
 			let searchBox = document.querySelector("input"),
 				li = document.querySelectorAll("li"),
-				ul = document.getElementsByTagName("ul"),
-				fetchPromise = fetch(endpoint).then((object) => {
-					console.log("executed");
-					return object.json();
-				});
+				ul = document.querySelector("ul");
 
-			searchBox.addEventListener("keydown", () => {
+			// Event listener
+			const filterSearch = () => {
 				li.forEach((item) => item.remove());
-				fetchPromise
-					.then((cities) =>
-						cities.filter(
-							({ city, state }) =>
-								city.toLowerCase().includes(searchBox.value.toLowerCase()) ||
-								state.toLowerCase().includes(searchBox.value.toLowerCase())
-						)
-					)
-					.then((result) => {
-						let { city, state, population } = result[0];
-						let newLi = document.createElement('li');
-						let text = document.createTextNode(`${city}, ${state} 		${population}`);
-						ul.appendChild(newLi);
-						console.log(`${city}, ${state} 		${population}`);
-					});
-			});
+
+				let filteredCities = cities.filter(
+						({ city, state }) =>
+							city.toLowerCase().includes(searchBox.value.toLowerCase()) ||
+							state.toLowerCase().includes(searchBox.value.toLowerCase())
+					),
+					{ city, state, population } = filteredCities,
+
+					newLi = document.createElement("li"),
+					newLiText = document.createTextNode(
+						`${city}, ${state} 		${population}`
+					);
+			};
+
+			searchBox.addEventListener("keydown", filterSearch);
+			// let searchBox = document.querySelector("input"),
+			// 	li = document.querySelectorAll("li"),
+			// 	ul = document.getElementsByTagName("ul"),
+			// 	fetchPromise = fetch(endpoint).then((object) => {
+			// 		console.log("executed");
+			// 		return object.json();
+			// 	});
+
+			// searchBox.addEventListener("keydown", () => {
+			// 	li.forEach((item) => item.remove());
+			// 	fetchPromise
+			// 		.then((cities) =>
+			// 			cities.filter(
+			// 				({ city, state }) =>
+			// 					city.toLowerCase().includes(searchBox.value.toLowerCase()) ||
+			// 					state.toLowerCase().includes(searchBox.value.toLowerCase())
+			// 			)
+			// 		)
+			// 		.then((result) => {
+			// 			let { city, state, population } = result[0];
+			// 			let newLi = document.createElement('li');
+			// 			let text = document.createTextNode(`${city}, ${state} 		${population}`);
+			// 			ul.appendChild(newLi);
+			// 			console.log(`${city}, ${state} 		${population}`);
+			// 		});
+			// });
 		</script>
 	</body>
 </html>
