@@ -24,13 +24,13 @@
 
 			// Query selector variables
 			let searchBox = document.querySelector("input"),
-				li = document.querySelectorAll("li"),
 				ul = document.querySelector("ul");
 
 			// Event listener
 			const filterSearch = () => {
 				// Remove template Li
-				li.forEach((item) => item.remove());
+				(li = document.querySelectorAll("li")),
+					li.forEach((item) => item.remove());
 
 				// Filter cities
 				let filteredCities = cities.filter(
@@ -40,10 +40,10 @@
 				);
 
 				// Create suggestions
-				for (let i = 0; i <= 5; i++) {
-					let {city, state, population} = filteredCities[i];
+				for (let i = 0; i <= 10; i++) {
+					let { city, state, population } = filteredCities[i];
 					let newLi = document.createElement("li"),
-						text = document.createTextNode(`${city}, ${state} 		${population}`);
+						text = document.createTextNode(`${city}, ${state} - ${population}`);
 					newLi.appendChild(text);
 					ul.append(newLi);
 				}
