@@ -92,6 +92,27 @@
 			</div>
 		</div>
 
-		<script></script>
+		<script>
+			// declare variable for all Checkboxes
+			const checkboxes = document.querySelectorAll("input");
+			let lastChecked;
+
+			checkboxes.forEach((nodeItem) =>
+				nodeItem.addEventListener("click", ({ shiftKey }) => {
+					let inBetween = false;
+					if (shiftKey && nodeItem.checked) {
+						checkboxes.forEach((checkbox) => {
+							if (checkbox == nodeItem || checkbox == lastChecked) {
+								inBetween = !inBetween;
+							}
+							if (inBetween) {
+								checkbox.checked = true;
+							}
+						});
+					}
+					lastChecked = nodeItem;
+				})
+			);
+		</script>
 	</body>
 </html>
