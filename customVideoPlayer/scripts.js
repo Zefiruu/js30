@@ -6,6 +6,12 @@ const handlePlayClick = () =>
 	videoPlayer.paused ? videoPlayer.play() : videoPlayer.pause();
 
 playBtn.addEventListener("click", handlePlayClick);
+videoPlayer.addEventListener("click", handlePlayClick);
+window.addEventListener("keydown", ({ code }) =>
+	code === "Space" ? handlePlayClick() : 0
+);
+videoPlayer.addEventListener("play", () => (playBtn.innerHTML = "| |"));
+videoPlayer.addEventListener("pause", () => (playBtn.innerHTML = "►"));
 
 // Volume Slider
 const volumeSlider = document.querySelector("input[name='volume']");
@@ -27,4 +33,3 @@ const handleProgressChange = () => {
 };
 
 videoPlayer.addEventListener("timeupdate", handleProgressChange);
-progressBar.addEventListener("mousemove");
