@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Key Detection</title>
+		<script
+			type="text/javascript"
+			src="https://www.cornify.com/js/cornify.js"
+		></script>
+	</head>
+	<body>
+		<p>Check out the console!</p>
+		<script>
+			const keySequence = [];
+			const konamiCode =
+				"ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightba";
+
+			const checkForKonamiCode = ({ key }) => {
+				keySequence.push(key);
+				console.log(konamiSequenceFound());
+			};
+
+			const konamiSequenceFound = () =>
+				keySequence.join("").includes(konamiCode) ? true : false;
+
+			window.addEventListener("keydown", checkForKonamiCode);
+		</script>
+	</body>
+</html>
